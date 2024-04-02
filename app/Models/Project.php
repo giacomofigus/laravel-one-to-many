@@ -21,4 +21,10 @@ class Project extends Model
     public static function generateSlug($name){
         return Str::slug($name, '-');
     }
+
+    // Un progetto può avere solo un tipo (One to many)
+
+    public function type(): BelongsTo{
+        return $this->BelongsTo( Type::class );
+    }
 }
