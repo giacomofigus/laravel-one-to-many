@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Type;
+
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+
 use Illuminate\Support\Str;
+
 use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
@@ -25,7 +29,10 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('pages.projects.create');
+        // Ottengo i dati dalla tabella types
+        $types = Type::all();
+
+        return view('pages.projects.create', compact('types'));
     }
 
     /**
@@ -62,7 +69,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('pages.projects.edit', compact('project'));
+        $types = Type::all();        
+
+        return view('pages.projects.edit', compact('project', 'types'));
     }
 
     /**
