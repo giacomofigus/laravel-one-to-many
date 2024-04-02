@@ -22,6 +22,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
+                        <th scope="col">Tipo</th>
                         <th scope="col">Description</th>
                         <th scope="col">Slug</th>
                         <th scope="col">Cover Images</th>
@@ -36,6 +37,7 @@
                                     {{ $item->name }}
                                 </a>
                             </td>
+                            <td>{{  $item->type_id  }}</td>
                             <td>{{ $item->description }}</td>
                             <td>{{ $item->slug }}</td>
                             <td>{{ $item->cover_image }}</td>

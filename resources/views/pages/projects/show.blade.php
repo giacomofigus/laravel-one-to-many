@@ -12,5 +12,11 @@
             class="img-fluid">   
         @endif
 
+        <p>
+            <strong>
+                {{ $project->type->name }}
+            </strong>
+        </p>
+
     </main>
 @endsection
