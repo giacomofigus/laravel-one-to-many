@@ -26,6 +26,35 @@
                         <input type="file" name="cover_image" id="cover_image" class="form-control">
                     </div>
 
+                    <div>
+                        <div class="mb-3">
+                            <label for="type_id" class="form-label">
+                                City
+                            </label>
+                            <select
+                                class="
+                                    form-select 
+                                    form-select-lg
+                                    {{-- Inserire validazione --}}
+                                    "
+                                name="type_id"
+                                id="type_id"
+                            >
+                                <option selected value="">Select one</option>
+
+                                @foreach ($types as $item)
+                                <option 
+                                value="{{ $item->id }}"
+                                {{ $item->id == old('type_id') ? 'selected' : '' }}
+                                >
+                                    {{ $item->name }}
+                                </option>
+                                @endforeach
+
+                            </select>
+                        </div>
+                        
+                    </div>
 
                     <button type="submit" class="btn btn-primary mt-4">
                         Crea
