@@ -23,7 +23,8 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'name' => ['required'],
-            'description' => ['nullable']
+            'description' => ['nullable'],
+            'cover_image' => ['image|mimes:jpeg,png,jpg,gif|max:2048']
         ];
     }
 }
